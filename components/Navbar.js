@@ -1,20 +1,14 @@
 import Link from "next/link";
 
-const Navbar = () => {
+export default function Navbar() {
   return (
-    <nav style={styles.navbar}>
-      <h2>📰 Article Website</h2>
-      <ul style={styles.navLinks}>
+    <nav style={{ padding: "10px", background: "#0070f3", color: "white" }}>
+      <ul style={{ display: "flex", listStyle: "none", justifyContent: "center", gap: "20px" }}>
         <li><Link href="/">Home</Link></li>
+        <li><Link href="/articles">Articles</Link></li>
         <li><Link href="/about">About</Link></li>
+        <li><Link href="/contact">Contact</Link></li>
       </ul>
     </nav>
   );
-};
-
-const styles = {
-  navbar: { display: "flex", justifyContent: "space-between", padding: "1rem", background: "#333", color: "#fff" },
-  navLinks: { listStyle: "none", display: "flex", gap: "1rem" }
-};
-
-export default Navbar;
+}

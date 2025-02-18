@@ -1,25 +1,11 @@
-import { useEffect } from "react";
-import Script from "next/script";
+import Navbar from "../components/Navbar";
+import "../styles/globals.css";
 
-function MyApp({ Component, pageProps }) {
-  useEffect(() => {
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){ dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'UA-XXXXXXXXX-X'); // Yaha apna AdSense ID lagao
-  }, []);
-
+export default function MyApp({ Component, pageProps }) {
   return (
     <>
-      <Script
-        strategy="afterInteractive"
-        async
-        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
-        crossOrigin="anonymous"
-      />
+      <Navbar />
       <Component {...pageProps} />
     </>
   );
 }
-
-export default MyApp;
